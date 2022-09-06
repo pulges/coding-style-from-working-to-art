@@ -42,6 +42,8 @@ from project management system or just plain guess and hope he's right. This gen
 interrupts the code reading flow. Also some the might have been fixed or improved by later commits, making finding
 the initial task really displeasing. 
 
+**Good examples of comments:**
+
   ```typescript
   /**
    * Returns if user has sufficient permissions for given app id (true/false)
@@ -61,7 +63,7 @@ the initial task really displeasing.
   * `valueId` is missing in `values` list
   * 
   * For columns that are untranslatable (defined by `values` parameter nullish)
-  * we currently do not detect missing values.
+  * we currently do not detect and show missing values in UI.
   **/
   let valueIsMissing = false;
   if (attributeTranslation?.values) {
@@ -85,6 +87,15 @@ the initial task really displeasing.
 ## 2. Provide short summary for a lengthy block
  
 Comments can also be used to shorten code reading time and improve discover-ability by providing reader with short
-insight to what a lengthy method or piece of code does. With good short comment reading through the whole code could be
-skipped to understand its function.  
+insight to what a lengthy method or piece of code does. With good short comment, reading through the whole code could be
+skipped to understand its function.
 
+```javascript
+/** 
+ * Does 1d breakdowns from database for getting `population` values and 
+ * converts results from slow to handle array formats to hashmaps for fast access.
+ */
+function breakdown1DAsMap(breakdownColumnIds, filter) {
+  // ...
+}
+```
