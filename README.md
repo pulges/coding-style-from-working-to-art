@@ -11,7 +11,7 @@ for introverts).
 
 This here is an opinionated collection of tips and tricks to make Your life better by making life easier to whoever
 needs to read or fix your code in the future. Keep in mind that the fixer might be the future You, and it is often the
-highest praise to impress him / her. The examples here are mostly javascript React-Redux-Saga application based but the
+highest praise or all to impress him / her. The examples here are mostly javascript React-Redux-Saga application based but the
 ideas can probably be easily carried over to other environments as well. 
 
 Contents:
