@@ -8,7 +8,9 @@ Though there is some truth to it, it has been mostly abused, without actually kn
 to skip commenting and documenting. Even the best self-documenting code needs additional documentation and commenting.
 
 Very often this phrase is used referring to really bad and toxic examples of code commenting.
-I'm referring to commenting the obvious:
+I'm referring to commenting the obvious.
+
+**Do not do this!:**
 
 ```javascript
 // Declare count variable
@@ -26,11 +28,12 @@ for (let i = 1; i <= 5; i++) {
 let a = ["Alice", "Bob", "Charlie"]
 ```
 
-**Do not do this!** All these comments are just useless and meaningless as they just duplicate the code that can be
+All these comments are just useless and meaningless as they just duplicate the code that can be
 as easily be read from code itself. 
 
 Instead here are some examples of where and how to use commenting so it would have a purpose and actually complement
 Your code.
+
 ## 1. Provide some "Insider" information
 
 Providing some information about why the code exists, that can not be read directly from the code, is one of the best
@@ -99,3 +102,62 @@ function breakdown1DAsMap(breakdownColumnIds, filter) {
   // ...
 }
 ```
+
+## 3. Describe pitfalls of your code
+
+If a method or code blocks has some known limitations when used or developed further, it is a good idea to include a
+comment for the next developer.
+
+Example:
+
+```javascript
+ /**
+   * This method should just return anchor element position relevant info
+   * and should not do any mutations or expensive logic.
+   * For it is called very often.
+   */
+const getAnchorBBox = () => {
+  // ..
+```
+
+Sometimes the limitation is not in the code itself but in design. Crossing that design and extending the code beyond its
+given design may break places where it is already used or planned to be used.
+
+Lets consider for example a Dropdown React component: a component that should place a positioned box with given contents to
+the side of a reference element.
+
+```javascript
+
+/**
+ * A react component that renders a positioned and styled element next to a given reference element.
+ * 
+ * It is designed to unify all dropdowns in application to have same style shadows, corners and tick element, thus
+ * giving different styles to the component is not expected to be implemented here.
+ * 
+ * It t is expects to be given all its content via `children` prop not provide any padding by
+ * itself. The padding should be provided by children.
+ * 
+ *   <Dropdown>
+ *    <div className="my-header">
+ *       Header
+ *      </div>
+ *     <div className="my-padded-content">
+ *       Content
+ *      </div>
+ *   </Dropdown>
+ * 
+ * It stretches to fit the content elements.  
+ */
+class Dropdown extends PureComponent {
+//...
+}
+```
+
+By these comments next developer can easily see what the Dropdown module is designed to do and knows not to:
+  
+  * Overwrite its styles or add paddings into this component when designer gives instructions for style changes
+  * Fix dropdown size with some css parameters and use these styles on children instead.
+
+If a common module with incompatible overlay rules are still needed, one can always make a new class that extends this class.
+
+
