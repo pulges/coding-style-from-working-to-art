@@ -87,7 +87,7 @@ the initial task really displeasing.
   for next developers snowballing into a disaster. Also it would be much harder for another developer to see that maybe
   the task at hand is already conflicting with existing code.
 
-## 2. Provide short summary for a lengthy block
+## 2. Provide short summary for a lengthy or difficult to read block
  
 Comments can also be used to shorten code reading time and improve discover-ability by providing reader with short
 insight to what a lengthy method or piece of code does. With good short comment, reading through the whole code could be
@@ -101,6 +101,34 @@ skipped to understand its function.
 function breakdown1DAsMap(breakdownColumnIds, filter) {
   // ...
 }
+```
+
+Some difficult to read  code, like regular expressions or fast binary manipulations, just cry out to be backed by
+a comment describing exactly how the code should work. It is very easy to make a mistake in a difficult to read
+code, and very hard to actually read from code later what part was intended and what was an undesired side-effect,
+a simple comment can really save the day here:
+
+```javascript
+/** Regexp matcher for float range inputs
+  * 
+  * Matches if string is it is one of the following:
+  * <-3.3
+  * >-4
+  * <=4
+  * >=-3
+  * 2..5
+  * -100.23..-1.2
+  * 
+  * all numbers can also have suffixes (2k..10k)
+  *    * k - kilo
+  *    * M - mega
+  *    * G - giga
+  *    * B - for additional byte notation like KB or MB
+  *    * T - tera
+  *    * P - peta
+  *    * E - exa
+  */
+const REGEX_VALID_MATCH = /^(((<|>|<=|>=)?\s*(-?\d+(\.\d+)?([kMGBTPE])?))|((-?\d+(\.\d+)?([kMGBTPE])?)\s*\.\.\s*(-?\d+(\.\d+)?([kMGBTPE])?)))$/;
 ```
 
 ## 3. Describe pitfalls of your code
