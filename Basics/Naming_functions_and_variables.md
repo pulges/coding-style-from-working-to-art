@@ -175,3 +175,7 @@ definitions. It helps not only in code read-ability, but in all communication, f
 making documentations easier to read, etc. The mayor hurdle though is keeping the glossary in an easily accessible place,
 up to date and and enforcing not only developers, but also project managers and analysts, to re-read it from time-to-time
 and use it in all communication.
+
+Coders spend quite an enormous chunk of their time finding just the right name for identifiers. In some cases more time
+is spent on finding the names than actually typing. Thus establishing a glossary can also save a lot of time by taking
+some guesswork and doubt that the chosen name actually fits, out of the equation.
