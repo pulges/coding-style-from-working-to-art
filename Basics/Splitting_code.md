@@ -86,7 +86,8 @@ cosnt isTimepickerVisible = (
   (charts.length > 0 || !(view.breakdownTimepicker === false || view.breakdownTimepicker === undefined)
 );
 ```
-Better readable with naming adding context:
+
+More readable with naming also adding context:
 ```javascript {.good-code}
 const isTimeSupportedInApp = isAvailableDateRangeValid(availableDateRange);
 
