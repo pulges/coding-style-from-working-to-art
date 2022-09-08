@@ -1,4 +1,4 @@
-# Documenting and commenting
+# Commenting
 
 Countless times I've heard this *cliché* phrase:
 
@@ -29,12 +29,28 @@ let a = ["Alice", "Bob", "Charlie"]
 ```
 
 All these comments are just useless and meaningless as they just duplicate the code that can be
-as easily be read from code itself. 
+as easily be read from code itself.
 
-Instead here are some examples of where and how to use commenting so it would have a purpose and actually complement
-Your code.
+When commenting for javascript JSDoc style comments but enriched with markdown syntax is usually the best option, as
+most IDEs know how to display the information using tooltips about a method or variable below it, even
+when it is imported from another file. Also markdown allows links to other files and more.
 
-## 1. Provide some "Insider" information
+```javascript
+// Instead of this,
+const foo = () => {}
+
+/** do this and ide will help you */
+const bar = () => {}
+```
+
+![VSCode Intellisense Tooltip](./intellisenseTooltip.png)
+
+## Meaningful comments
+
+Here are some examples of where and how to use commenting, so it would have a purpose and actually complement
+Your code:
+
+### 1. Provide some "Insider" information
 
 Providing some information about why the code exists, that can not be read directly from the code, is one of the best
 ways comments can be utilized. Very often these places in code are overlooked, as the writer of the code has just read
@@ -43,7 +59,8 @@ the task at hand, where the same lines are probably present. Thus it seems un-ne
 This is a mistake though, as another developer later reading the code needs to find the task that these lines refer to
 from project management system or just plain guess and hope he's right. This generates a lot of wasted time and
 interrupts the code reading flow. Also some the might have been fixed or improved by later commits, making finding
-the initial task really displeasing. 
+the initial task really displeasing.
+
 
 **Good examples of comments:**
 
@@ -87,7 +104,7 @@ the initial task really displeasing.
   for next developers snowballing into a disaster. Also it would be much harder for another developer to see that maybe
   the task at hand is already conflicting with existing code.
 
-## 2. Provide short summary for a lengthy or difficult to read block
+### 2. Provide short summary for a lengthy or difficult to read block
  
 Comments can also be used to shorten code reading time and improve discover-ability by providing reader with short
 insight to what a lengthy method or piece of code does. With good short comment, reading through the whole code could be
@@ -131,7 +148,7 @@ a simple comment can really save the day here:
 const REGEX_VALID_MATCH = /^(((<|>|<=|>=)?\s*(-?\d+(\.\d+)?([kMGBTPE])?))|((-?\d+(\.\d+)?([kMGBTPE])?)\s*\.\.\s*(-?\d+(\.\d+)?([kMGBTPE])?)))$/;
 ```
 
-## 3. Describe pitfalls of your code
+### 3. Describe pitfalls of your code
 
 If a method or code blocks has some known limitations when used or developed further, it is a good idea to include a
 comment for the next developer.
@@ -188,4 +205,73 @@ By these comments next developer can easily see what the Dropdown module is desi
 
 If a common module with incompatible overlay rules are still needed, one can always make a new class that extends this class.
 
+### 4. JSdoc your interface and data properties - especially the optional and too generic ones.
 
+I've heard a lot lately that instead of commenting and documenting, use Typescript. I agee that Typescript does a
+really good job of what it was designed to do: keeping away javascript typecasting errors and allowing developers to
+fortify their modules against bad input. It does not however replace good commenting. 
+You can think of it this way: knowing that a square block will fit into a square hole is not telling you much about
+what will happen if done so.
+
+Even further typescript does not help you at all with optional properties - you do not 
+know what will happen if omitted. Without reading through the code it is impossible to tell if some default used instead,
+maybe some functionality limited or event behavior changed.
+
+Typescript does play well with JSDoc comments making them visible not only from type tooltip but also from instances 
+created from this type, so when using TypeScript commenting type properties is usually the simplest.
+
+**This is why you should comment optional properties:**
+```typescript
+export type SuperFiltersState = {
+  /** Stores the current filter object that user is editing */
+  filter: LogicGroupDefinition;
+
+  /** Defines the selected element in filters.
+   * If `undefined` nothing is selected and this side-panels are closed  */
+  selectedFilterObjPath?: string,
+
+  /** Defines the picked/selected database column currently in edit`{tableType, tableId, columnId}`
+   * If `undefined`, no column yet picked */
+  selectedEditColumn?: GroupColumnConf,
+
+  /** Contains filter allowed groups and columns conf as it is given by user - comes from mongo.
+   * Does not mean that all groups or columns are shown as user might not have permissions or the columns might not exist
+   * anymore in database.
+   * When `undefined` UI will not be displayed and initialized.
+  */
+  groupsConf?: GroupsConf,
+```
+
+Sometimes the type of an interface property is just too generic to actually know what you should put
+in there. Look at the properties! Do you really know what you should put in there without reading the code?
+
+```typescript
+type SpinnerProps = {
+  size: number;
+  stroke: string;
+  strokeWidth: number;
+};
+
+class Spinner extends PureComponent<SpinnerProps> {
+  // ...
+```
+
+With comments it becomes a lot clearer:
+
+```typescript
+type SpinnerProps = {
+  /** Diameter of spinner circle in pixels */
+  size: number;
+
+  /** Color of spinner circle border: ex "red" or "#FF1234" */
+  stroke: string;
+
+  /** Thickness of spinner circle border in pixels */
+  strokeWidth: number;
+};
+
+class Spinner extends PureComponent<SpinnerProps> {
+  // ...
+```
+
+# Documenting
