@@ -1,4 +1,4 @@
-# Javascript: from working to art
+# Javascript: from "just working" to art.
 
 The quality of a coder, from managers perspective, is often measured in hours, but You should not let yourself be
 confused by this blinding fact and try to finish the job at hand as fast as possible. The quality of code, from the

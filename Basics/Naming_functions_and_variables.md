@@ -147,6 +147,12 @@ guidelines to naming to make reading even faster and simpler.
       const isUserPresent = Boolean(user);
     ```
 
+### Event handlers
+
+### Prefixing methods, properties and variables for internal use.
+
+### 
+
 ## Establish a glossary
 
 Glossary is often forgotten when talking about naming conventions but it is one of the places that can really make a 
