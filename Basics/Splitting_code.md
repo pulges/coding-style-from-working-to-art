@@ -90,6 +90,7 @@ Better readable with naming adding context:
 ```javascript {.good-code}
 const isTimeSupportedInApp = isAvailableDateRangeValid(availableDateRange);
 
+/** View should always show timepicker if it has charts */
 const hasCharts = charts.length > 0;
 
 /** Default behavior or view if `breakdownTimepicker` property is omitted is visible */
