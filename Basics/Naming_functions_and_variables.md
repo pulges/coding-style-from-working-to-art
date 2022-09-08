@@ -91,7 +91,63 @@ Only consistent naming convention enjoys the benefits:
 To simplify new developer on-boarding and avoid useless hours arguing about naming notations, it is a good idea to
 dedicate a section for it in projects README.md files or in company wide style-guide (or both).
 
-## Glossary
+## Extended rules for notation
+
+To extend this common rules set and really give it some shine, I suggest adding additional (but suggested not mandatory)
+guidelines to naming to make reading even faster and simpler. 
+
+### Booleans and functions returning booleans
+
+  * There is a convention to prefix boolean variables and function names with "is" or "has".
+    The convention is not a must, but a good starting point that often improves readability. 
+
+    ```javascript
+      if (isLoggedIn) {};
+      if (hasAccess) {};
+      if (isLoading()) {};
+    ```
+
+  * Avoid negations in boolean naming as it deeply impacts code readability.
+
+    Bad:
+    ```javascript {.bad-code}
+      if (!account.isDisabled) {
+        // ...
+      }
+    ```
+
+    ```javascript {.bad-code}
+      const isNotGreen = true;
+      if (!isNotGreen) {
+        // ...
+      } else {
+        // ...
+      }
+    ```
+
+    Good:
+    ```javascript {.good-code}
+      if (account.isEnabled) {
+        // ...
+      }
+    ```
+
+    ```javascript {.good-code}
+      const isGreen = false;
+      if (isGreen) {
+        // ...
+      } else {
+        // ...
+      }
+    ```
+
+  * It is a good idea to name undefined/nullish check booleans using `is{ SOMETHING }Present` schema.
+
+    ```javascript
+      const isUserPresent = Boolean(user);
+    ```
+
+## Establish a glossary
 
 Glossary is often forgotten when talking about naming conventions but it is one of the places that can really make a 
 huge difference in codebase. Probably everybody has been at least once been hit with code, that does not make sense,
