@@ -16,7 +16,7 @@ React-Redux-Saga application based but the ideas can probably be easily carried 
 
 Contents:
 
-* [The basics](./Basics/Basics.md)
+* The basics
   * [Commenting](./Basics/Commenting.md)
   * [Documenting](./Basics/Documenting.md)
   * [Establishing a naming convention](./Basics/Naming_functions_and_variables.md)
