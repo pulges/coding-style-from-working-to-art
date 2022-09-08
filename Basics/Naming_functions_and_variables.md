@@ -98,54 +98,54 @@ guidelines to naming to make reading even faster and simpler.
 
 ### Booleans and functions returning booleans
 
-  * There is a convention to prefix boolean variables and function names with "is" or "has".
-    The convention is not a must, but a good starting point that often improves readability. 
+There is a convention to prefix boolean variables and function names with "is" or "has".
+The convention is not a must, but a good starting point that often improves readability. 
 
-    ```javascript
-      if (isLoggedIn) {};
-      if (hasAccess) {};
-      if (isLoading()) {};
-    ```
+```javascript
+  if (isLoggedIn) {};
+  if (hasAccess) {};
+  if (isLoading()) {};
+```
 
-  * Avoid negations in boolean naming as it deeply impacts code readability.
+Avoid negations in boolean naming as it deeply impacts code readability.
 
-    Bad:
-    ```javascript {.bad-code}
-      if (!account.isDisabled) {
-        // ...
-      }
-    ```
+Bad:
+```javascript {.bad-code}
+  if (!account.isDisabled) {
+    // ...
+  }
+```
 
-    ```javascript {.bad-code}
-      const isNotGreen = true;
-      if (!isNotGreen) {
-        // ...
-      } else {
-        // ...
-      }
-    ```
+```javascript {.bad-code}
+  const isNotGreen = true;
+  if (!isNotGreen) {
+    // ...
+  } else {
+    // ...
+  }
+```
 
-    Good:
-    ```javascript {.good-code}
-      if (account.isEnabled) {
-        // ...
-      }
-    ```
+Good:
+```javascript {.good-code}
+  if (account.isEnabled) {
+    // ...
+  }
+```
 
-    ```javascript {.good-code}
-      const isGreen = false;
-      if (isGreen) {
-        // ...
-      } else {
-        // ...
-      }
-    ```
+```javascript {.good-code}
+  const isGreen = false;
+  if (isGreen) {
+    // ...
+  } else {
+    // ...
+  }
+```
 
-  * It is a good idea to name undefined/nullish check booleans using `is{ SOMETHING }Present` schema.
+It is a good idea to name undefined/nullish check booleans using `is{ SOMETHING }Present` schema.
 
-    ```javascript
-      const isUserPresent = Boolean(user);
-    ```
+  ```javascript
+    const isUserPresent = Boolean(user);
+  ```
 
 ### Event handlers
 
