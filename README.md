@@ -2,12 +2,14 @@
 
 The quality of a coder, from managers perspective, is often measured in hours, but You should not let yourself be
 confused by this blinding fact and try to finish the job at hand as fast as possible. The quality of code, from the
-perspective of other coders is measured in WTF-s per hour. All coders agree that a code with less WTFs/h is not only
+perspective of other coders is measured in WTF-s per minute. All coders agree that a code with less WTFs/min is not only
 easier to read, but also faster to work on. Almost always more hours are spent on fixing and improving existing features,
 than creating new ones. So writing code that is well documented, readable and manageable, improves the speed of the
 whole collective and thus the time spent at first, will be rewarded soon. Not to mention it will give You higher
 reputation and improve Your social status among co-workers (without without the need to actually speak too much - perfect
 for introverts).
+
+![WTFs/min](https://i.imgur.com/J1svNp7.jpg)
 
 This here is an opinionated collection of tips and tricks to make Your life better by making life easier to whoever
 needs to read or fix your code in the future. Keep in mind that the fixer might be the future You, and it is often the
