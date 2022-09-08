@@ -21,8 +21,8 @@ Contents:
   * [Documenting](./Basics/Documenting.md)
   * [Establishing a naming convention](./Basics/Naming_functions_and_variables.md)
   * [Splitting code to smaller files](./Basics/Splitting_code.md)
-  * [Ordering and grouping](./Basics/Odering_and_grouping.md)
-  * [Learn by reviewing what changes others have made to your code](./Basics/Learn_by_review.md)
+  * [Ordering and grouping](./Basics/Ordering_and_grouping.md)
+  
 * [Architecture](./Architecture/Architecture.md)
   * [Understanding client's and users](./Architecture/Understanding_your_client_and_user.md)
   * [Shortest and fastest: not the best](./Architecture/Shortest_and_fastest_not_the_best.md)
@@ -31,3 +31,4 @@ Contents:
   * [Keeping business logic separated](./Architecture/Keeping_business_logic_separated.md)
   * [Handling the unknown](./Architecture/Handling_the_unknown.md)
   * [Handling external libraries](./Architecture/Handling_external_libraries.md)
+  * [Learn by reviewing what changes others have made to your code](./Architecture/Learn_by_review.md)
