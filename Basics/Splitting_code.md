@@ -109,3 +109,9 @@ mention that adding variable names already is adding some context. I find it oft
 some blocks are kept blindly in belief that "if it was written, probably it is needed somewhere". So split up long
 boolean statements and make sure that next developer has all knowledge needed to add modifications. It will stop
 a lot of office-fighting and -blaming.
+
+## 2. Keep one export per file
+
+## 3. Refactor the long file to a directory with multiple files
+
+## 4. React really likes you if you make the list nodes a separate component.
