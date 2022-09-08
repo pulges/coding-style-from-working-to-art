@@ -110,13 +110,13 @@ The convention is not a must, but a good starting point that often improves read
 Avoid negations in boolean naming as it deeply impacts code readability.
 
 Bad:
-```javascript {.bad-code}
+```javascript
   if (!account.isDisabled) {
     // ...
   }
 ```
 
-```javascript {.bad-code}
+```javascript
   const isNotGreen = true;
   if (!isNotGreen) {
     // ...
@@ -126,13 +126,13 @@ Bad:
 ```
 
 Good:
-```javascript {.good-code}
+```javascript
   if (account.isEnabled) {
     // ...
   }
 ```
 
-```javascript {.good-code}
+```javascript
   const isGreen = false;
   if (isGreen) {
     // ...
