@@ -11,13 +11,14 @@ for introverts).
 
 This here is an opinionated collection of tips and tricks to make Your life better by making life easier to whoever
 needs to read or fix your code in the future. Keep in mind that the fixer might be the future You, and it is often the
-highest praise or all to impress him / her. The examples here are mostly javascript React-Redux-Saga application based but the
-ideas can probably be easily carried over to other environments as well. 
+highest praise of all to be impressed by Your own code from years back. The examples here are mostly javascript
+React-Redux-Saga application based but the ideas can probably be easily carried over to other environments as well. 
 
 Contents:
 
 * [The basics](./Basics/Basics.md)
-  * [Documenting and commenting](./Basics/Documenting_and_commenting.md)
+  * [Commenting](./Basics/Commenting.md)
+  * [Documenting](./Basics/Documenting.md)
   * [Establishing a naming convention](./Basics/Naming_functions_and_variables.md)
   * [Splitting code to smaller files](./Basics/Splitting_code.md)
   * [Ordering and grouping](./Basics/Odering_and_grouping.md)

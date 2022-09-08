@@ -273,5 +273,3 @@ type SpinnerProps = {
 class Spinner extends PureComponent<SpinnerProps> {
   // ...
 ```
-
-# Documenting
