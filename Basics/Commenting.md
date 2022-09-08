@@ -25,7 +25,7 @@ for (let i = 1; i <= 5; i++) {
 }
 
 // An array of names
-let a = ["Alice", "Bob", "Charlie"]
+let a = ["Alice", "Bob", "Charlie"];
 ```
 
 All these comments are just useless and meaningless as they just duplicate the code that can be
