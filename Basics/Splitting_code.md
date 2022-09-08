@@ -93,12 +93,12 @@ const isTimeSupportedInApp = isAvailableDateRangeValid(availableDateRange);
 const hasCharts = charts.length > 0;
 
 /** Default behavior or view if `breakdownTimepicker` property is omitted is visible */
-const isBreakdownTimepickerConfigured = !(
+const isTimepickerConfiguredInView = !(
   view.breakdownTimepicker === false ||
   view.breakdownTimepicker === undefined
 );
 
-const isTimepickerVisible = isTimeSupportedInApp && (hasEpisodeCharts || isBreakdownTimepickerConfigured);
+const isTimepickerVisible = isTimeSupportedInApp && (hasCharts || isTimepickerConfiguredInView);
 ```
 
 I can say that a lot, maybe even most, logic mistakes in code, happen in these long if statements. They can be quite a
