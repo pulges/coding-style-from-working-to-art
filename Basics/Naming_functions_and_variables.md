@@ -95,25 +95,27 @@ dedicate a section for it in projects README.md files or in company wide style-g
 
 Glossary is often forgotten when talking about naming conventions but it is one of the places that can really make a 
 huge difference in codebase. Probably everybody has been at least once been hit with code, that does not make sense,
-but somehow magically works. Then, after hours of debugging finding that the name `attribute` (or whatever the name
+but somehow magically works. Then, after hours of debugging, finding that the name `attribute` (or whatever the name
 at hand) means really very different things in different but rather close cases by function.
 
-From my own practice we had this really bad `attribute` over-use case, where eventually it might refer to:
-  
-* id of column in database
-* object of column in that database
-* a value id for a column in that database
-* value object or translation
-* sometimes even some other property not related to database columns and values at all.
+From my own practice we had exactly this really bad `attribute` over-use case, where eventually it might refer to:
 
-We started fixing it by dropping the name "attribute" all-together and establishing in the glossary:
+* Id of a column in database.
+* Object of a column in that database.
+* A value id for a column in that database.
+* Value object or translation.
+* Occasionally even some other property not related to database columns and values at all.
 
-* `columnId` - string - id of column in database
-* `valueId` - a value id for a column in that database
+We started fixing it by dropping the name "attribute" all-together and establishing a glossary:
 
-This also left some room for names "column" and "value" to be used more freely inside functions for whatever type needed
-at the moment.
+* `columnId` - string - id of column in database.
+* `valueId` - a value id for a column in that database.
 
-Establishing a project-wide glossary and giving some names single fixed definitions, helps not only in code readability,
-but also in all communication. The mayor hurdle though is keeping the documentation in an easily accessible place and
-enforce not only developers, but also project managers and analysts, to use it in all communication.
+This also left some room for identifiers "column" and "value" to be used more freely inside function scope for whatever
+type needed at the moment.
+
+The biggest benefit though can be gained when establishing a project-wide glossary and giving some names single fixed
+definitions. It helps not only in code read-ability, but in all communication, fixing some misunderstandings in tasks, 
+making documentations easier to read, etc. The mayor hurdle though is keeping the glossary in an easily accessible place,
+up to date and and enforcing not only developers, but also project managers and analysts, to re-read it from time-to-time
+and use it in all communication.
