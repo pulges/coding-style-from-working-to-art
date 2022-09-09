@@ -1,6 +1,6 @@
 # Documenting
 
-<img src="https://geekandpoke.typepad.com/.a/6a00d8341d3df553ef0168eabe2192970c-pi" width="300">
+<img src="https://geekandpoke.typepad.com/.a/6a00d8341d3df553ef0168eabe2192970c-pi" width="500">
 
 > ## And so the habit of not even looking for a documentation begins.
 
