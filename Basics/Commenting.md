@@ -31,9 +31,9 @@ let a = ["Alice", "Bob", "Charlie"];
 All these comments are just useless and meaningless as they just duplicate the code that can be
 as easily be read from code itself.
 
-When commenting for javascript JSDoc style comments but enriched with markdown syntax is usually the best option, as
-most IDEs know how to display the information using tooltips about a method or variable below it, even
-when it is imported from another file. Also markdown allows links to other files and more.
+Also when commenting know your toolkit. For javascript JSDoc style comments but enriched with markdown syntax is usually
+the best option, as most IDEs know how to display the information using tooltips about a method or variable below it,
+even when it is imported from another file. Also markdown allows links to other files and more.
 
 ```javascript
 // Instead of this,
