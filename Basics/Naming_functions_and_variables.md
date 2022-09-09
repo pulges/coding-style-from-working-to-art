@@ -147,8 +147,93 @@ It is a good idea to name undefined/nullish check booleans using `is{ SOMETHING 
     const isUserPresent = Boolean(user);
   ```
 
-### Event handlers
+### Event callback methods and handlers
 
+In javascript world, there is a convention to prefix all your event callback methods in your module public interface
+with `on`. For example the method name for `click` event, that others can bind their callback functions becomes
+`onClick`. This adds a helpful hint about your module property, and how to use it, for other developers.
+
+```jsx
+<Button onClick={ handleClick }>Click me!</Button>
+
+<Modal
+  title="Welcome!"
+  onSideClick={ handleSideClick }
+>
+  Consider yourself welcomed!
+</Modal>
+```
+
+There also another, not so common, convention to prefix all Your event callback handling functions with `handle`. This
+convention I particularly like as it, in addition to additional context benefits, also leaves room for another method 
+with same name but omitting the prefix. Very often a module has an action method that needs to be called from multiple 
+places, but event handlers have some specific event specific jargon that needs to be done in addition:
+
+```jsx
+class MyComponent extents PureComponent {
+
+  constructor(props) {
+    this.state = {
+      editingValue: props.value,
+      isValid: this.validate(props.value)
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const curValue = this.props.value;
+    const prevValue = prevProps.value;
+    const { editingValue } = this.state;
+
+    // We let user edit the input freely, but until there are no outside changes,
+    // then those outside changes will be forced on
+    if (
+      curValue !== prevValue &&
+      editingValue !== curValue
+    ) {
+      this.changeEditingValue(curValue);
+    }
+  }
+
+  handleSubmitClick = () => {
+    const { onChange } = this.props;
+    const { editingValue } = this.state;
+    onChange(editingValue);
+  }
+
+  // Event specific jargon here
+  handleChangeEditingValue = (event) => {
+    const value = event.target.value;
+    this.changeEditingValue(value);
+  }
+
+  // More generic method that can be called anywhere in module
+  changeEditingValue = (value) => {
+    this.setState({
+      editingValue: value,
+      isValid: this.validate(value)
+    });
+  }
+
+  validate = (value) => {
+    // validate value here and return boolean
+  }
+
+  render() {
+    const { editingValue, isValid } = this.state;
+
+    return (
+      <div data-is-valid={ isValid }>
+        <input
+          value={ editingValue }
+          onChange={ this.handleChangeEditingValue }
+        />
+        <button onClick={ this.handleSubmitClick }>Submit</button>
+      </div>
+    );
+  }
+
+}
+```
 ### Prefixing methods, properties and variables for internal use.
 
 ### 
