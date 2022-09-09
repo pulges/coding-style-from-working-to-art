@@ -108,8 +108,7 @@ The convention is not a must, but a good starting point that often improves read
 ```
 
 Avoid negations in boolean naming as it deeply impacts code readability.
-
-Bad:
+For example this takes some mind-bending to understand:
 ```javascript
   if (!account.isDisabled) {
     // ...
@@ -125,7 +124,7 @@ Bad:
   }
 ```
 
-Good:
+But is much more readable without double negations:
 ```javascript
   if (account.isEnabled) {
     // ...
@@ -155,7 +154,8 @@ with `on`. For example the method name for `click` event, that others can bind t
 
 ```jsx
 <Button onClick={ handleClick }>Click me!</Button>
-
+```
+```jsx
 <Modal
   title="Welcome!"
   onSideClick={ handleSideClick }
@@ -184,8 +184,8 @@ class MyComponent extents PureComponent {
     const prevValue = prevProps.value;
     const { editingValue } = this.state;
 
-    // We let user edit the input freely, but until there are no outside changes,
-    // then those outside changes will be forced on
+    // We let user edit the input freely unless there are outside changes.
+    // Then those outside changes will be forced upon
     if (
       curValue !== prevValue &&
       editingValue !== curValue
@@ -234,9 +234,26 @@ class MyComponent extents PureComponent {
 
 }
 ```
-### Prefixing methods, properties and variables for internal use.
+### Prefixing methods and properties for internal use.
 
-### 
+This was a quite common practice back in the day, when there was way to create private methods, to prefix
+private properties with `_`. But even now from time to time you want to mark an instance property, that can not be
+hidden, as "for internal use", so other developers would know not to bind some functionality to it.
+
+```jsx
+<MyCompoent
+  _customModeForTesting={ true }
+/>
+```
+```jsx
+test('Test same message double sending block', () => {
+  const messenger = new Messenger();
+  for (let i = 0; i < 10; i++) {
+    messenger.sendMessage('Foo bar');
+  }
+  expect(messenger._blockedMessagesCount).toBe(9);
+});
+```
 
 ## Establish a glossary
 
