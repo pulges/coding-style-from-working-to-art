@@ -6,7 +6,7 @@ needs must be met and the process consisits of this simplified circle.
 ```mermaid
 flowchart LR
 
-Codebase --> |compile| Application --> Client --> |feedback| Developers --> Codebase
+Codebase --> |compile| Application --> Client --> |feedback| Developers[Team & Developers] --> Codebase
 
 ```
 
@@ -27,16 +27,61 @@ For example consumers of a codebase can be:
     one click away from everything.
   * Paid user - interested in getting everything, but from client's perspective everything is limited\
     to profitable operations.
-  * Exclusive special case who has a lot of money - wants something that would be un-proffitable, but 
+  * The exclusive special cases who have a lot of money - wants something that would be un-proffitable, but 
     has a lot of money to throw at it, makes it profitable. Into this group belong also connections and
     info-sharing with competition, that means that sometimes their access to other features might even be
     a lot more limited than paid-user.
-
+* Other Developers - consuming the style, architecture and documentation of codebase from another perspective
+* Through architecture documentation:
+  * QA
+  * Sales
+  * Analysts
   
+So the real consumer structure is something like this:
+
+```mermaid
+flowchart TB
+
+subgraph app["App"]
+  Codebase --> Application[Compiled Application]
+  Codebase --> Documentation
+end
+
+subgraph clientside["Client side ."]
+  Client[Client -  who pays] 
+
+  subgraph enduser["End-users"]
+    Freeusers[Free users]
+    Paiduser[Paid users]
+    Exclusiveusers[Exclusive users]
+  end
 
 
+  Client --> Freeusers
+  Client --> Paiduser
+  Client --> Exclusiveusers
+end
 
+Application --> clientside
 
+subgraph team["Team as consumer"]
+   Developers
+   QA
+   Sales
+   Analysts
+end
 
+Codebase --> Developers
+Documentation --> Developers
+Documentation --> QA
+Documentation --> Sales
+Documentation --> Analysts
+```
+
+Every consumer has its own perspective on things, and thus when processng feedback it is very important
+to ask who sent it? Also keep in mind that there is not a quaranteed overlap between end-user groups. Quite
+often there are features specific to just one group that is not available to others and it is not a strict hierarchy that who pays more gets more.
+
+Development team is often forgotten from the list of actual codebase consumers, but it is a huge mistake.
 
 
