@@ -95,3 +95,40 @@ the current standard of choice everywhere, so it is advised to use this file nam
 user interfaces even know to bring forward these files. There is also a need for an entry point documentation
 file, that is also a README.md usually kept at root. With growth of application comes also the need to write down the knowledge that is not a single module specific, but cover whole application or is even outside of application current codebase, but should be known when developing.
 
+```
+README.md
+
+documentaions/
+    Configuration/
+        App_Main_Conf.md
+    General_Data_Flow/
+        Token_Filters.md
+        Breakdowns.md
+
+src/
+    components/
+        Module1/
+            index.js
+            README.md
+        Module2/
+            index.js
+            README.md
+            
+    helpers/
+        calculateTableIndexes/
+            index.js
+            README.md
+
+```
+
+* Root README.md should contain
+  * Short descrition of what the repository contains
+  * Section for developer how to get started
+  * Linked tree of contents to documentations/
+
+* It is a good idea to link README.md files under src/ to places where referred in documentations/ and also reverse.
+* JSDoc comments can contain links to .md files. This is a way of keeping away double commenting.
+
+This way structured documentation can be navigated in github and atlassian git UI-s so allready accessible to everybody.
+It is also easy to add a build time script that converts all to html and also builds contents tree, so non-linked files 
+are easier to find.
