@@ -84,6 +84,11 @@ often there are features specific to just one group that is not available to oth
 
 Development team is often forgotten from the list of actual codebase consumers, but it is a huge mistake. Your team is probably most deeply involved client of your codebase. You'll probably have to focus your 
 architecture more on your own teams needs, while also matchinh other clients requirements, when you 
-plan to maintain the project for a long time.
+plan to maintain the project for a long time. And from my experience it is always good to assume the project
+will become long sustained one. Designing it this way not only reduces nasty suprises when you later
+need to support it, but also guides the client to actually become one if you expose a bit of your architecture
+exposing that there are ways for improvements, taht the client did not know he needed before.
+
+
 
 
