@@ -23,13 +23,13 @@ Contents:
   * [Documenting](./Basics/Documenting.md)
   * [Establishing a naming convention](./Basics/Naming_functions_and_variables.md)
   * [Splitting code to smaller files](./Basics/Splitting_code.md)
-  * [Ordering and grouping](./Basics/Ordering_and_grouping.md)
+  * Ordering and grouping
   
-* [Architecture](./Architecture/Architecture.md)
+* Architecture
   * [Understanding client's and users](./Architecture/Understanding_your_client_and_user.md)
-  * [Shortest and fastest: not the best](./Architecture/Shortest_and_fastest_not_the_best.md)
   * [Keeping module interfaces simple](./Architecture/Keeping_module_interfaces_simple.md)
-  * [Keeping business logic separated](./Architecture/Keeping_business_logic_separated.md)
-  * [Handling the unknown](./Architecture/Handling_the_unknown.md)
-  * [Handling external libraries](./Architecture/Handling_external_libraries.md)
-  * [Learn by reviewing what changes others have made to your code](./Architecture/Learn_by_review.md)
+  * Shortest and fastest: not the best
+  * Keeping business logic separated
+  * Handling the unknown
+  * Handling external libraries
+  * Learn by reviewing what changes others have made to your code
