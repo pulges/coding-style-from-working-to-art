@@ -82,6 +82,8 @@ Every consumer has its own perspective on things, and thus when processng feedba
 to ask who sent it? Also keep in mind that there is not a quaranteed overlap between end-user groups. Quite
 often there are features specific to just one group that is not available to others and it is not a strict hierarchy that who pays more gets more.
 
-Development team is often forgotten from the list of actual codebase consumers, but it is a huge mistake.
+Development team is often forgotten from the list of actual codebase consumers, but it is a huge mistake. Your team is probably most deeply involved client of your codebase. You'll probably have to focus your 
+architecture more on your own teams needs, while also matchinh other clients requirements, when you 
+plan to maintain the project for a long time.
 
 
